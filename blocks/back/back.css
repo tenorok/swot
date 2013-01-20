@@ -1,0 +1,51 @@
+.back {
+    position: relative;
+
+    display: block;
+    padding: 10px 16px;
+    width: 100px;
+    height: 20px;
+
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    text-indent: 25px;
+    font-size: 18px;
+    line-height: 18px;
+
+    border-radius: 0 6px 6px 0;
+
+    background-image: -webkit-linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
+    background-image:    -moz-linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
+    background-image:     -ms-linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
+    background-image:      -o-linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
+    background-image:         linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
+}
+.back:before,
+.back:after {
+    position: absolute;
+    left: -13px;
+    content: '';
+
+    width: 40px;
+    height: 20px;
+
+    background: #fff;
+}
+.back:before {
+    top: 24px;
+    
+    -webkit-transform: rotate(45deg);
+       -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+         -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+}
+.back:after {
+    top: -5px;
+    
+    -webkit-transform: rotate(-45deg);
+       -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+         -o-transform: rotate(-45deg);
+}

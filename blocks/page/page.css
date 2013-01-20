@@ -1,0 +1,32 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.page {
+    width: 200%;
+
+    -webkit-transition: margin-left .8s;
+       -moz-transition: margin-left .8s;
+        -ms-transition: margin-left .8s;
+         -o-transition: margin-left .8s;
+            transition: margin-left .8s;
+}
+.page_position_right {
+    margin-left: -100%;
+}
+    .page__left {
+        width: 50%;
+        float: left;
+    }
+    .page__right {
+        width: 50%;
+        float: left;
+    }
+        .page__right_wrap {
+            padding: 20px;
+        }
