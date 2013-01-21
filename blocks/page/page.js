@@ -52,6 +52,12 @@ var swot = {
             }
         }
 
+        if(swot.settings.random) {
+            task = task.sort(function() {
+                return Math.random() - 0.5;
+            });
+        }
+
         return genTestItems(task, planeWords);
 
         function getIncludedVals(vals) {
