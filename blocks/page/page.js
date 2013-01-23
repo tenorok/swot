@@ -3,8 +3,8 @@ var swot = {
     init: function() {
         
         this.monitor();
-        this.groups.load();
-        this.back.init();
+        this.button.init();
+        return swot.next('home', this.groups.load());
     },
 
     monitor: function() {
@@ -15,13 +15,56 @@ var swot = {
 
             if(hash && hash !== '') {
 
+                var hashInfo = hash.split('-');
+
+                switch(hashInfo[0]) {
+
+                    case 'prev':
+                        return swot.prev();
+
+                    case 'list':
+                        return swot.next(hash, swot.groups.load());
+                }
+                
                 var task = swot.genTask(swot.settings.groups[hash].words);
-
-                console.log(task);
-
-                $('.page').bemSetMod('position', 'right');
+                console.log(task);   
             }
         });
+    },
+
+    // Массив экранов
+    stack: [],
+
+    prev: function() {
+
+        if(this.stack.length > 1) {
+
+            this.stack.pop();
+            $('%page(display):last').remove();
+            this.calcWidth();
+        }
+    },
+
+    next: function(name, html) {
+        
+        this.stack.push({
+            name: name,
+            html: html
+        });
+
+        $('%page').append(html);
+        this.calcWidth();
+    },
+
+    calcWidth: function() {
+        
+        var stackLen = this.stack.length;
+
+        $('%page').css('width', stackLen * 100 + '%');
+        $('%page(display)').css('width', 100 / stackLen + '%');
+        $('%page').css('margin-left', -100 * (stackLen - 1) + '%');
+        
+        return stackLen;
     },
 
     genTask: function(words) {

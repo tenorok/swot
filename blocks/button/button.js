@@ -1,8 +1,8 @@
-swot.back = {
+swot.button = {
 
     init: function() {
 
-        $('%back').click(function() {
+        $('%button').click(function() {
             $('%page').bemDelMod('position');
         });
     }

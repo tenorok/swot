@@ -1,5 +1,6 @@
 .groups {
     font-size: 20px;
+    list-style-type: none;
 }
     .groups__item {
     }

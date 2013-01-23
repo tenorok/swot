@@ -2,11 +2,9 @@ swot.groups = {
 
     load: function() {
 
-        var that = this;
-
-        $('#groups').tmpl({
+        return $('#groups').tmpl({
             groups: swot.settings.groups
-        }).appendTo('.page__left');
+        });
 
         // swot.settings.forEach(function(e, i) {
             

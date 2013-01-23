@@ -11,22 +11,24 @@
     </head>
     <body>
         <div class="page">
-            <div class="page__left"></div>
-            <div class="page__right">
+            <!-- <div class="page__display"></div> -->
+            <!-- <div class="page__right">
                 <div class="page__right_wrap">
-                    <a href="#" class="back">группы</a>
+                    <a href="#" class="button button_back">группы</a>
                 </div>
-            </div>
+            </div> -->
         </div>
         
         <script type="text/x-jquery-tmpl" id="groups">
-            <ul class="groups">
-                {{each groups}}
-                    <li class="groups__item">
-                        <a href="#${$index}" class="groups__link">${name}</a>
-                    </li>
-                {{/each}}
-            </ul>
+            <div class="page__display">
+                <ul class="groups">
+                    {{each groups}}
+                        <li class="groups__item">
+                            <a href="#list-${$index}" class="groups__link">${name}</a>
+                        </li>
+                    {{/each}}
+                </ul>
+            </div>
         </script>
     </body>
 </html>

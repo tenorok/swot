@@ -16,17 +16,10 @@ body {
          -o-transition: margin-left .8s;
             transition: margin-left .8s;
 }
-.page_position_right {
-    margin-left: -100%;
-}
-    .page__left {
-        width: 50%;
+    .page__display {
         float: left;
+        width: 100%;
     }
-    .page__right {
-        width: 50%;
-        float: left;
-    }
-        .page__right_wrap {
+        .page__wrap {
             padding: 20px;
         }
