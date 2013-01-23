@@ -15,12 +15,13 @@ var swot = {
 
             if(hash && hash !== '') {
 
-                var hashInfo = hash.split('-');
+                var hashInfo = hash.split('-'),
+                    hashName = hashInfo.slice(1).join('-');
 
                 switch(hashInfo[0]) {
 
                     case 'prev':
-                        return swot.prev();
+                        return swot.prev(hashName);
 
                     case 'list':
                         return swot.next(hash, swot.groups.load());
@@ -35,14 +36,40 @@ var swot = {
     // Массив экранов
     stack: [],
 
-    prev: function() {
+    prev: function(name) {
 
-        if(this.stack.length > 1) {
+        if(this.stack.length < 2)
+            return;
 
-            this.stack.pop();
-            $('%page(display):last').remove();
-            this.calcWidth();
+        if(name !== undefined) {
+
+            var displayIndex = null;
+            
+            this.stack.every(function(e, i) {
+                if(e.name === name) {
+                    displayIndex = i;
+                    return false;
+                }
+                return true;
+            });
+
+            if(displayIndex) {
+                for(var d = swot.stack.length; d > displayIndex + 1; d--) {
+                    removeLastDisplay();
+                }
+                this.calcWidth();
+                return;
+            }
         }
+
+        function removeLastDisplay() {
+            swot.stack.pop();
+            $('%page(display):last').remove();
+        }
+
+        // Если имя не задано или оно не нашлось
+        removeLastDisplay();
+        this.calcWidth();
     },
 
     next: function(name, html) {
