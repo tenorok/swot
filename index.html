@@ -24,10 +24,27 @@
                 <ul class="groups">
                     {{each groups}}
                         <li class="groups__item">
-                            <a href="#list-${$index}" class="groups__link">${name}</a>
+                            <a href="#words-${$index}" class="groups__link">${name}</a>
                         </li>
                     {{/each}}
                 </ul>
+            </div>
+        </script>
+
+        <script type="text/x-jquery-tmpl" id="words">
+            <div class="page__display">
+                <div class="page__wrap">
+                    <a href="#" class="button button_back">группы</a>
+                    <ul class="words">
+                        {{each words}}
+                            <li class="words_item">
+                                <img src="img/${en_small}.jpg" alt="${en_small}" class="words_img">
+                                <div class="words_en">${en}</div>
+                                <div class="words_ru">${ru}</div>
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
             </div>
         </script>
     </body>

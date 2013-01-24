@@ -25,4 +25,4 @@ swot.settings = {
             skirt: 'юбка'
         }
     }]
-}
+};

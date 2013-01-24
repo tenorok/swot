@@ -2,8 +2,8 @@ swot.button = {
 
     init: function() {
 
-        $('%button').click(function() {
-            $('%page').bemDelMod('position');
+        $('body').on('click', '%button{back}', function() {
+            swot.prev();
         });
     }
-}
+};

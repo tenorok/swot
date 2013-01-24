@@ -1,0 +1,28 @@
+.words {
+    margin-left: 32px;
+    list-style-type: none;
+}
+    .words_item {
+        margin: 20px 0;
+    }
+    .words_item:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+        .words_img {
+            float: left;
+            margin-right: 10px;
+            width: 100px;
+        }
+        .words_en,
+        .words_ru {
+            margin-left: 110px;
+        }
+        .words_en {
+            margin-bottom: 6px;
+            font-size: 22px;
+        }
+        .words_ru {
+            font-size: 16px;
+        }

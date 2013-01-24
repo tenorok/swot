@@ -15,11 +15,12 @@
 
     border-radius: 0 6px 6px 0;
 
-    buttonground-image: -webkit-linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
-    buttonground-image:    -moz-linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
-    buttonground-image:     -ms-linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
-    buttonground-image:      -o-linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
-    buttonground-image:         linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
+    background: #4E81E5;
+    background: -webkit-linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
+    background:    -moz-linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
+    background:     -ms-linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
+    background:      -o-linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
+    background:         linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
 }
 .button:before,
 .button:after {
@@ -30,7 +31,7 @@
     width: 40px;
     height: 20px;
 
-    buttonground: #fff;
+    background: #fff;
 }
 .button:before {
     top: 24px;

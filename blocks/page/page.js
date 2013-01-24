@@ -23,8 +23,8 @@ var swot = {
                     case 'prev':
                         return swot.prev(hashName);
 
-                    case 'list':
-                        return swot.next(hash, swot.groups.load());
+                    case 'words':
+                        return swot.next(hash, swot.words.show(hashName));
                 }
                 
                 var task = swot.genTask(swot.settings.groups[hash].words);
@@ -95,7 +95,7 @@ var swot = {
             setTimeout(function() {
                 callback();
                 calcPageWidth();
-            }, 1500);
+            }, 800);
         }
         else {
             calcPageWidth();
