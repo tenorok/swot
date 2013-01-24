@@ -54,10 +54,13 @@ var swot = {
             });
 
             if(displayIndex) {
-                for(var d = swot.stack.length; d > displayIndex + 1; d--) {
-                    removeLastDisplay();
-                }
-                this.calcWidth();
+                
+                this.changeDisplay(displayIndex + 1, function() {
+                    for(var d = swot.stack.length; d > displayIndex + 1; d--) {
+                        removeLastDisplay();
+                    }
+                });
+
                 return;
             }
         }
@@ -68,8 +71,7 @@ var swot = {
         }
 
         // Если имя не задано или оно не нашлось
-        removeLastDisplay();
-        this.calcWidth();
+        this.changeDisplay(swot.stack.length - 1, removeLastDisplay);
     },
 
     next: function(name, html) {
@@ -80,16 +82,29 @@ var swot = {
         });
 
         $('%page').append(html);
-        this.calcWidth();
+        this.changeDisplay();
     },
 
-    calcWidth: function() {
+    changeDisplay: function(stackLen, callback) {
         
-        var stackLen = this.stack.length;
+        stackLen = stackLen || this.stack.length;
 
-        $('%page').css('width', stackLen * 100 + '%');
-        $('%page(display)').css('width', 100 / stackLen + '%');
         $('%page').css('margin-left', -100 * (stackLen - 1) + '%');
+
+        if(callback !== undefined) {
+            setTimeout(function() {
+                callback();
+                calcPageWidth();
+            }, 1500);
+        }
+        else {
+            calcPageWidth();
+        }
+
+        function calcPageWidth() {
+            $('%page').css('width', stackLen * 100 + '%');
+            $('%page(display)').css('width', 100 / stackLen + '%');
+        }
         
         return stackLen;
     },
