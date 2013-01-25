@@ -7,7 +7,7 @@
         <script src="js/common.js"></script>
         <script src="settings.js"></script>
         <link rel="stylesheet" href="css/common.css">
-        <title>Зубрёжка</title>
+        <title>Зубр</title>
     </head>
     <body>
         <div class="page">
@@ -34,13 +34,16 @@
         <script type="text/x-jquery-tmpl" id="words">
             <div class="page__display">
                 <div class="page__wrap">
-                    <a href="#" class="button button_back">группы</a>
+                    <div class="page__head">
+                        <a href="#" class="button button_back">группы</a>
+                        <a href="#" class="button button_next">начать</a>
+                    </div>
                     <ul class="words">
                         {{each words}}
-                            <li class="words_item">
-                                <img src="img/${en_small}.jpg" alt="${en_small}" class="words_img">
-                                <div class="words_en">${en}</div>
-                                <div class="words_ru">${ru}</div>
+                            <li class="words__item">
+                                <img src="img/${en_small}.jpg" alt="${en_small}" class="words__img">
+                                <div class="words__en">${en}</div>
+                                <div class="words__ru">${ru}</div>
                             </li>
                         {{/each}}
                     </ul>

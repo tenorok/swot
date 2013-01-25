@@ -2,27 +2,28 @@
     margin-left: 32px;
     list-style-type: none;
 }
-    .words_item {
+    .words__item {
         margin: 20px 0;
     }
-    .words_item:after {
+    .words__item:after {
         content: '';
         display: table;
         clear: both;
     }
-        .words_img {
+        .words__img {
             float: left;
             margin-right: 10px;
             width: 100px;
         }
-        .words_en,
-        .words_ru {
+        .words__en,
+        .words__ru {
             margin-left: 110px;
         }
-        .words_en {
+        .words__en {
             margin-bottom: 6px;
             font-size: 22px;
         }
-        .words_ru {
+        .words__ru {
             font-size: 16px;
+            color: #666;
         }

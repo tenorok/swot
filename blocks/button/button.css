@@ -1,19 +1,17 @@
 .button {
     position: relative;
 
-    display: block;
+    display: inline-block;
     padding: 10px 16px;
-    width: 100px;
     height: 20px;
 
     color: #fff;
     text-decoration: none;
     text-align: center;
-    text-indent: 25px;
     font-size: 18px;
     line-height: 18px;
 
-    border-radius: 0 6px 6px 0;
+    border-radius: 6px;
 
     background: #4E81E5;
     background: -webkit-linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
@@ -22,10 +20,11 @@
     background:      -o-linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
     background:         linear-gradient(rgba(2, 72, 210, .6), rgba(4, 80, 232, .9));
 }
-.button:before,
-.button:after {
+.button_back:before,
+.button_back:after,
+.button_next:before,
+.button_next:after {
     position: absolute;
-    left: -13px;
     content: '';
 
     width: 40px;
@@ -33,20 +32,48 @@
 
     background: #fff;
 }
-.button:before {
-    top: 24px;
-    
+.button_back:before,
+.button_next:before {
     -webkit-transform: rotate(45deg);
        -moz-transform: rotate(45deg);
         -ms-transform: rotate(45deg);
          -o-transform: rotate(45deg);
             transform: rotate(45deg);
 }
-.button:after {
-    top: -5px;
-    
+.button_back:after,
+.button_next:after {
     -webkit-transform: rotate(-45deg);
        -moz-transform: rotate(-45deg);
         -ms-transform: rotate(-45deg);
          -o-transform: rotate(-45deg);
+}
+
+.button_back {
+    float: left;
+    padding-left: 35px;
+}
+.button_back:before,
+.button_back:after {
+    left: -13px;
+}
+.button_back:before {
+    top: 24px;
+}
+.button_back:after {
+    top: -5px;
+}
+
+.button_next {
+    float: right;
+    padding-right: 35px;
+}
+.button_next:before,
+.button_next:after {
+    right: -13px;
+}
+.button_next:before {
+    top: -5px;
+}
+.button_next:after {
+    top: 24px;
 }

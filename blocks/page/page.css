@@ -23,3 +23,8 @@ body {
         .page__wrap {
             padding: 20px;
         }
+            .page__head:after {
+                content: '';
+                display: table;
+                clear: both;
+            }
