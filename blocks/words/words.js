@@ -14,6 +14,7 @@ swot.words = {
         }
         
         return $('#words').tmpl({
+            task: i,
             words: groupArray
         });
     }

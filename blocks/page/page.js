@@ -25,10 +25,12 @@ var swot = {
 
                     case 'words':
                         return swot.next(hash, swot.words.show(hashName));
+
+                    case 'task':
+                        var task = swot.genTask(swot.settings.groups[hashName].words);
+                        console.log(task);
+                        break;
                 }
-                
-                var task = swot.genTask(swot.settings.groups[hash].words);
-                console.log(task);   
             }
         });
     },
@@ -132,7 +134,8 @@ var swot = {
                     en: word,
                     ru: words[word],
                     lang: getRandomVal(langs),
-                    type: getRandomVal(types)
+                    type: getRandomVal(types),
+                    img: chanceShowImage()
                 });
             }
         }
@@ -160,6 +163,10 @@ var swot = {
 
         function getRandomVal(vals) {
             return vals[Math.floor(Math.random() * vals.length)];
+        }
+
+        function chanceShowImage() {
+            return Math.round(Math.random() * 100) < swot.settings.image;
         }
 
         function genTestItems(task, words) {
