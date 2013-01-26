@@ -2,3 +2,6 @@
 @import url("../blocks/groups/groups.css");
 @import url("../blocks/button/button.css");
 @import url("../blocks/words/words.css");
+@import url("../blocks/task/task.css");
+@import url("../blocks/points/points.css");
+@import url("../blocks/progress/progress.css");

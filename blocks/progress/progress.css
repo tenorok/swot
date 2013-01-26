@@ -1,0 +1,33 @@
+.progress {
+    margin: 20px auto 0;
+    width: 300px;
+    line-height: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+    .progress__bar {
+        display: inline-block;
+        border: 1px solid #bbb;
+        width: 250px;
+        border-radius: 16px;
+        overflow: hidden;
+    }
+        .progress__line {
+            height: 20px;
+            border-radius: 16px;
+            background: #aaa;
+            background: -webkit-linear-gradient(rgba(220, 220, 220, 0.7), rgba(160, 160, 160, 0.8));
+            background:    -moz-linear-gradient(rgba(220, 220, 220, 0.7), rgba(160, 160, 160, 0.8));
+            background:     -ms-linear-gradient(rgba(220, 220, 220, 0.7), rgba(160, 160, 160, 0.8));
+            background:      -o-linear-gradient(rgba(220, 220, 220, 0.7), rgba(160, 160, 160, 0.8));
+            background:         linear-gradient(rgba(220, 220, 220, 0.7), rgba(160, 160, 160, 0.8));
+        }
+            .progress__current {
+                color: #fff;
+            }
+    .progress__sum {
+        display: inline-block;
+        margin-left: 6px;
+        overflow: hidden;
+        color: #888;
+    }

@@ -1,0 +1,16 @@
+.task {
+    padding-top: 100px;
+    text-align: center;
+}
+    .task__img {
+        width: 100px;
+    }
+    .task__word {
+        padding: 14px 0;
+        font-size: 22px;
+    }
+    .task__input {
+        padding: 6px 10px;
+        width: 150px;
+        font-size: 18px;
+    }
