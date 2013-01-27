@@ -28,3 +28,25 @@ body {
                 display: table;
                 clear: both;
             }
+            .page__center {
+                text-align: center;
+            }
+                .page__h1 {
+                    margin: 8px 0 16px;
+                    font-size: 28px;
+                    font-weight: normal;
+                }
+                .page__inline {
+                    display: inline-block;
+                    text-align: left;
+                }
+                .page__p {
+                    margin: 4px 0;
+                    font-size: 16px;
+                }
+                .page__span_color_red {
+                    color: #C01010;
+                }
+                .page__span_color_green {
+                    color: #098B1F;
+                }

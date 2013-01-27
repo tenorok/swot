@@ -28,8 +28,10 @@ var swot = {
 
                     case 'task':
                         var task = swot.task.show(hashName);
-                        swot.next(hash, task.html, task.callback);
-                        return;
+                        return swot.next(hash, task.html, task.callback);
+
+                    case 'result':
+                        return swot.next('result', swot.result.show());
                 }
             }
         });
@@ -55,7 +57,7 @@ var swot = {
                 return true;
             });
 
-            if(displayIndex) {
+            if(displayIndex >= 0) {
                 
                 this.changeDisplay(displayIndex + 1, function() {
                     for(var d = swot.stack.length; d > displayIndex + 1; d--) {

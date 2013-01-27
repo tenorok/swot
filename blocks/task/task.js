@@ -1,10 +1,16 @@
 swot.task = {
 
     task: null,
+
+    result: {},
     
     show: function(group) {
 
         this.task = swot.task.genTask(swot.settings.groups[group].words);
+        this.result = {
+            right: 0,
+            wrong: 0
+        };
 
         return {
             html: $('#task').tmpl({
@@ -43,15 +49,18 @@ swot.task = {
     },
 
     check: function(answer, translation, index) {
-        
-        if(!swot.progress.change(index + 2, swot.task.task.length))
-            console.log('finish!');
 
         if(answer.toLowerCase() === translation.toLowerCase()) {
+            this.result.right++;
             $('%points').prepend('<li class="points__item points__item_green">*</li>');
         }
         else {
+            this.result.wrong++;
             $('%points').prepend('<li class="points__item points__item_red">*</li>');
+        }
+
+        if(!swot.progress.change(index + 2, swot.task.task.length)) {
+            location.hash = 'result';
         }
     },
 

@@ -76,5 +76,26 @@
                 <ul class="points"></ul>
             </div>
         </script>
+
+        <script type="text/x-jquery-tmpl" id="result">
+            <div class="page__display">
+                <div class="page__wrap">
+                    <div class="page__head">
+                        <a href="#prev-home" class="button button_back">группы</a>
+                    </div>
+                    <div class="page__center">
+                        <h1 class="page__h1">Результат</h1>
+                        <div class="page__inline">
+                            <p class="page__p">
+                                <span class="page__span_color_green">Правильно: ${right}/${count} (${right_percent}%)</span>
+                            </p>
+                            <p class="page__p">
+                                <span class="page__span_color_red">Ошибок: ${wrong} (${wrong_percent}%)</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
     </body>
 </html>

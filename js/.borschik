@@ -5,3 +5,4 @@
 /*borschik:include:../blocks/slider/slider.js*/
 /*borschik:include:../blocks/task/task.js*/
 /*borschik:include:../blocks/progress/progress.js*/
+/*borschik:include:../blocks/result/result.js*/
