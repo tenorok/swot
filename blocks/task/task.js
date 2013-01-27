@@ -1,20 +1,58 @@
 swot.task = {
 
+    task: null,
+    
     show: function(group) {
-        
-        var task = swot.task.genTask(swot.settings.groups[group].words),
 
-        html = $('#task').tmpl({
-            count: task.length,
-            tasks: task
-        });
+        this.task = swot.task.genTask(swot.settings.groups[group].words);
 
         return {
-            html: html,
-            callback: function() {
-                this.slider.init();
-            }
+            html: $('#task').tmpl({
+                count: this.task.length,
+                tasks: this.task
+            }),
+            callback: this.events
         };
+    },
+
+    events: function() {
+
+        this.slider.init();
+        swot.progress.change(1, this.task.task.length);
+
+        $('%task(input)').keypress(function(e) {
+            if(e.which === 13) {
+                nextAndCheck.call(this, $(this).val());
+            }
+        });
+
+        $('%task(test-link)').click(function() {
+            nextAndCheck.call(this, $(this).text());
+        });
+
+        function nextAndCheck(answer) {
+            
+            var elem = swot.slider.next();
+            
+            setTimeout(function() {
+                $('%task:eq(' + (elem + 1) + ')>%task(input)').focus();
+            }, 800);
+            
+            swot.task.check(answer, swot.task.task[elem].translation, elem);
+        }
+    },
+
+    check: function(answer, translation, index) {
+        
+        if(!swot.progress.change(index + 2, swot.task.task.length))
+            console.log('finish!');
+
+        if(answer.toLowerCase() === translation.toLowerCase()) {
+            $('%points').prepend('<li class="points__item points__item_green">*</li>');
+        }
+        else {
+            $('%points').prepend('<li class="points__item points__item_red">*</li>');
+        }
     },
 
     genTask: function(words) {
