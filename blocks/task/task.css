@@ -3,7 +3,7 @@
     text-align: center;
 }
     .task__img {
-        width: 100px;
+        height: 100px;
     }
     .task__word {
         padding: 14px 0;

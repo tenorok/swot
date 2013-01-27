@@ -5,3 +5,4 @@
 @import url("../blocks/task/task.css");
 @import url("../blocks/points/points.css");
 @import url("../blocks/progress/progress.css");
+@import url("../blocks/slider/slider.css");

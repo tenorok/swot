@@ -32,7 +32,7 @@
             .progress__current {
                 color: #fff;
             }
-    .progress__sum {
+    .progress__count {
         display: inline-block;
         margin-left: 6px;
         overflow: hidden;

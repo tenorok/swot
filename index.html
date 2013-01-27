@@ -10,14 +10,7 @@
         <title>Зубр</title>
     </head>
     <body>
-        <div class="page">
-            <!-- <div class="page__display"></div> -->
-            <!-- <div class="page__right">
-                <div class="page__right_wrap">
-                    <a href="#" class="button button_back">группы</a>
-                </div>
-            </div> -->
-        </div>
+        <div class="page"></div>
         
         <script type="text/x-jquery-tmpl" id="groups">
             <div class="page__display">
@@ -48,6 +41,41 @@
                         {{/each}}
                     </ul>
                 </div>
+            </div>
+        </script>
+
+        <script type="text/x-jquery-tmpl" id="task">
+            <div class="page__display">
+                <div class="progress">
+                    <div class="progress__bar">
+                        <div class="progress__line" style="width: 1%">
+                            <span class="progress__current">1</span>
+                        </div>
+                    </div>
+                    <div class="progress__count">${count}</div>
+                </div>
+                <div class="slider">
+                    <ul class="slider__wrap">
+                        {{each tasks}}
+                            <li class="slider__item task">
+                                <img src="img/${img}.jpg" class="task__img">
+                                <div class="task__word">${question}</div>
+                                {{if type == 'write'}}
+                                    <input type="text" class="task__input">
+                                {{else}}
+                                    <ul class="task__test">
+                                        {{each items}}
+                                            <li class="task__test-item"><a href="#" class="task__test-link">${$value}</a></li>
+                                        {{/each}}
+                                    </ul>
+                                {{/if}}
+                            </li>
+                        {{/each}}
+                    </ul>
+                </div>
+                <ul class="points">
+                    <li class="points__item points__item_green">*</li>
+                </ul>
             </div>
         </script>
     </body>

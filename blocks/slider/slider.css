@@ -1,0 +1,23 @@
+.slider {
+    margin: 0 auto;
+    width: 600px;
+    overflow: hidden;
+}
+    .slider__wrap {
+        list-style-type: none;
+
+        -webkit-transition: margin-left .5s;
+           -moz-transition: margin-left .5s;
+            -ms-transition: margin-left .5s;
+             -o-transition: margin-left .5s;
+                transition: margin-left .5s;
+    }
+    .slider__wrap:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+        .slider__item {
+            float: left;
+            width: 600px;
+        }

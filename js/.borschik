@@ -2,3 +2,5 @@
 /*borschik:include:../blocks/groups/groups.js*/
 /*borschik:include:../blocks/button/button.js*/
 /*borschik:include:../blocks/words/words.js*/
+/*borschik:include:../blocks/slider/slider.js*/
+/*borschik:include:../blocks/task/task.js*/
