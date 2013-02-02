@@ -2,9 +2,12 @@
     padding-top: 100px;
     text-align: center;
 }
-    .task__img {
+    .task__img-wrapper {
         height: 100px;
     }
+        .task__img {
+            height: inherit;
+        }
     .task__word {
         padding: 14px 0;
         font-size: 22px;

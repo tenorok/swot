@@ -58,7 +58,11 @@
                     <ul class="slider__wrap">
                         {{each tasks}}
                             <li class="slider__item task">
-                                <img src="img/${img}.jpg" class="task__img">
+                                <div class="task__img-wrapper">
+                                    {{if img}}
+                                        <img src="img/${img}.jpg" class="task__img">
+                                    {{/if}}
+                                </div>
                                 <div class="task__word">${question}</div>
                                 {{if type == 'write'}}
                                     <input type="text" class="task__input">
