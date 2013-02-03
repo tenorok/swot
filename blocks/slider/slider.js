@@ -1,8 +1,9 @@
 swot.slider = {
-
-    width: 600,
     
     init: function() {
+        
+        this.width = $('%slider(item)').width();
+
         $('%slider(wrap)').css({
             'width': $('%slider(item)').length * this.width + 'px'
         });

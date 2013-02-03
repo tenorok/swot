@@ -13,6 +13,7 @@ install::
 
 .PHONY: production
 production::
+	rm -rf production
 	mkdir production
 	mkdir production/common
 	cp common/common.css production/common/common.css

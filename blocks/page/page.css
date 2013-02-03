@@ -4,7 +4,7 @@
 }
 body {
     font-family: Arial, sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .page {
@@ -50,3 +50,10 @@ body {
                 .page__span_color_green {
                     color: #098B1F;
                 }
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+
+    .page__h1 {
+        margin-top: 28px;
+    }
+}

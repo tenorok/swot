@@ -50,3 +50,10 @@
                 background:      -o-linear-gradient(rgba(54, 155, 255, 0.35), rgba(54, 155, 255, 0.9));
                 background:         linear-gradient(rgba(54, 155, 255, 0.35), rgba(54, 155, 255, 0.9));
             }
+
+@media only screen and (max-width: 480px), only screen and (max-device-width: 480px) {
+    
+    .task {
+        padding-top: 30px;
+    }
+}

@@ -7,6 +7,10 @@ swot.result = {
             wrong = swot.task.result.wrong,
             percents = this.calcPercents(count, right, wrong);
         
+        if(swot.i.isDevice('iPhone')) {
+            $('%points').css('display', 'none');
+        }
+
         return $('#result').tmpl({
             count: count,
             right: right,

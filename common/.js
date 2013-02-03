@@ -6,3 +6,4 @@
 /*borschik:include:../blocks/task/task.js*/
 /*borschik:include:../blocks/progress/progress.js*/
 /*borschik:include:../blocks/result/result.js*/
+/*borschik:include:../blocks/i/i.js*/
