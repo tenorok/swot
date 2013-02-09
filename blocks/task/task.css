@@ -13,6 +13,7 @@
         font-size: 22px;
     }
     .task__input {
+        margin-bottom: 10px;
         padding: 6px 10px;
         width: 200px;
         font-size: 18px;

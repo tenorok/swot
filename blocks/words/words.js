@@ -10,7 +10,7 @@ swot.words = {
             groupArray.push({
                 en_small: word.toLowerCase().replace(/\s+/g, ''),
                 en: word,
-                ru: words[word]
+                ru: (typeof words[word] == 'string') ? words[word] : words[word].join(', ')
             });
         }
         

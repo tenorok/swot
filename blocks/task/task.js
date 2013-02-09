@@ -53,7 +53,8 @@ swot.task = {
 
     check: function(answer, translation, index) {
 
-        if(answer.toLowerCase() === translation.toLowerCase()) {
+        if(checkAnswer()) {
+
             this.result.right++;
             $('%points').prepend('<li class="points__item points__item_green">*</li>');
         }
@@ -64,6 +65,16 @@ swot.task = {
 
         if(!swot.progress.change(index + 2, swot.task.task.length)) {
             location.hash = 'result';
+        }
+
+        function checkAnswer() {
+
+            if(typeof translation == 'string') {
+                return translation.toLowerCase() == answer.toLowerCase();
+            }
+            else {
+                return translation.indexOf(answer.toLowerCase()) >= 0;
+            }
         }
     },
 
@@ -97,7 +108,7 @@ swot.task = {
                         translation = words[word];
                         break;
                     case 'ruen':
-                        question = words[word];
+                        question = getStringVal(words[word]);
                         translation = word;
                         break;
                 }
@@ -165,16 +176,21 @@ swot.task = {
 
                 var items = [],
                     count = swot.settings.testItems,
-                    lang  = lang.slice(2);
+                    lang  = lang.slice(2),
+                    randomVal;
 
                 for(var i = 0; i < count - 1; i++) {
-                    items.push(getRandomVal(words[lang]));
+                    items.push(getStringVal(getRandomVal(words[lang])));
                 }
 
-                items.splice(Math.floor(Math.random() * count), 0, answer[lang]);
+                items.splice(Math.floor(Math.random() * count), 0, getStringVal(answer[lang]));
 
                 return items;
             }
+        }
+
+        function getStringVal(val) {
+            return (typeof val == 'string') ? val : val[0];
         }
     }
 };
