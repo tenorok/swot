@@ -7,6 +7,12 @@ var swot = {
         return swot.next('home', this.groups.load());
     },
 
+    add: function(words) {
+
+        this.settings.groups = this.settings.groups || [];
+        this.settings.groups.push(words);
+    },
+
     monitor: function() {
 
         $(window).bind('hashchange', function() {
