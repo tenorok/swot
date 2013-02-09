@@ -6,7 +6,9 @@ swot.task = {
     
     show: function(group) {
 
-        this.task = swot.task.genTask(swot.settings.groups[group].words);
+        var groupInfo = swot.settings.groups[group];
+
+        this.task = swot.task.genTask(groupInfo.words);
         this.result = {
             right: 0,
             wrong: 0
@@ -15,6 +17,7 @@ swot.task = {
         return {
             html: $('#task').tmpl({
                 count: this.task.length,
+                group: groupInfo.name.toLowerCase(),
                 tasks: this.task
             }),
             callback: this.events

@@ -2,7 +2,8 @@ swot.words = {
 
     show: function(i) {
 
-        var words = swot.settings.groups[i].words,
+        var groupInfo = swot.settings.groups[i],
+            words = groupInfo.words,
             groupArray = [];
 
         for(word in words) {
@@ -15,6 +16,7 @@ swot.words = {
         
         return $('#words').tmpl({
             task: i,
+            group: groupInfo.name.toLowerCase(),
             words: groupArray
         });
     }
