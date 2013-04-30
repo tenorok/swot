@@ -70,10 +70,19 @@ swot.task = {
         function checkAnswer() {
 
             if(typeof translation == 'string') {
-                return translation.toLowerCase() == answer.toLowerCase();
+                return identicalWord(translation) == identicalWord(answer);
             }
             else {
-                return translation.indexOf(answer.toLowerCase()) >= 0;
+                for(var t = 0, len = translation.length; t < len; t++) {
+                    if(identicalWord(translation[t]) == identicalWord(answer)) {
+                        return true;
+                    }
+                }
+                return false;
+            }
+
+            function identicalWord(word) {
+                return word.toLowerCase().replace('ё', 'е');
             }
         }
     },
@@ -93,7 +102,7 @@ swot.task = {
             translation;
 
         for(var i = 0; i < set.loop; i++) {
-            for(word in words) {
+            for(var word in words) {
 
                 if(i === 0) {
                     planeWords.en.push(word);
