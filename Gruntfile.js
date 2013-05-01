@@ -4,9 +4,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-copy');
 
     grunt.registerTask('default', ['watch', 'concat']);
-    grunt.registerTask('production', ['concat', 'cssmin', 'uglify']);
+    grunt.registerTask('production', ['concat', 'cssmin', 'uglify', 'copy']);
 
     grunt.initConfig({
         watch: {
@@ -45,6 +46,20 @@ module.exports = function(grunt) {
                 },
                 options: {
                     report: 'gzip'
+                }
+            }
+        },
+        copy: {
+            production: {
+                files: {
+                    'production/': [
+                        'common/common.css',
+                        'common/common.js',
+                        'words/**',
+                        'lib/**',
+                        'index.html',
+                        'settings.js'
+                    ]
                 }
             }
         }
