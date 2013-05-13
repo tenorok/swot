@@ -13,7 +13,11 @@ var swot = {
         this.settings.groups.push(words);
     },
 
+    transitionDur: 0,
+
     monitor: function() {
+
+        this.transitionDur = this.getTransitionDur($('%page'));
 
         $(window).bind('hashchange', function() {
             
@@ -41,6 +45,10 @@ var swot = {
                 }
             }
         });
+    },
+
+    getTransitionDur: function(elem) {
+        return parseFloat(elem.css('transition-duration')) * 1000;
     },
 
     // Массив экранов

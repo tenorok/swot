@@ -41,11 +41,9 @@ swot.task = {
 
         function nextAndCheck(answer) {
             
-            var elem = swot.slider.next();
-            
-            setTimeout(function() {
+            var elem = swot.slider.next(function() {
                 $('%task:eq(' + (elem + 1) + ')>%task(input)').focus();
-            }, 800);
+            });
             
             swot.task.check(answer, swot.task.task[elem].translation, elem);
         }
