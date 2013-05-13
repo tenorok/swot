@@ -1,7 +1,11 @@
 var swot = {
     
+    dom: {},
+
     init: function() {
-        
+
+        dom.page = $('%page');
+
         this.monitor();
         this.button.init();
         return swot.next('home', this.groups.load());
@@ -17,7 +21,7 @@ var swot = {
 
     monitor: function() {
 
-        this.transitionDur = this.getTransitionDur($('%page'));
+        this.transitionDur = this.getTransitionDur(this.dom.page);
 
         $(window).bind('hashchange', function() {
             
@@ -99,7 +103,7 @@ var swot = {
             html: html
         });
 
-        $('%page').append(html);
+        this.dom.page.append(html);
         this.changeDisplay();
 
         if(callback !== undefined) {
@@ -111,7 +115,7 @@ var swot = {
         
         stackLen = stackLen || this.stack.length;
 
-        $('%page').css('margin-left', -100 * (stackLen - 1) + '%');
+        this.dom.page.css('margin-left', -100 * (stackLen - 1) + '%');
 
         var that = this;
 
@@ -126,7 +130,7 @@ var swot = {
         }
 
         function calcPageWidth() {
-            $('%page').css('width', stackLen * 100 + '%');
+            this.dom.page.css('width', stackLen * 100 + '%');
             $('%page(display)').css('width', 100 / stackLen + '%');
         }
         
